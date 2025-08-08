@@ -1,4 +1,7 @@
 package br.com.lucasflix.Controller.Response;
 
-public record CategoryResponse() {
+import lombok.Builder;
+
+@Builder
+public record CategoryResponse(Long id, String name) {
 }
