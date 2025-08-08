@@ -1,4 +1,4 @@
 package br.com.lucasflix.Controller.Request;
 
-public record CategoryRequest() {
+public record CategoryRequest(String name) {
 }
