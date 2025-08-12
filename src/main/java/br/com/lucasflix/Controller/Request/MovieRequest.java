@@ -1,4 +1,4 @@
 package br.com.lucasflix.Controller.Request;
 
-public class MovieRequest {
+public record MovieRequest(String name) {
 }
