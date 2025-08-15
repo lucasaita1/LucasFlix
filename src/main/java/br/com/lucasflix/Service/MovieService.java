@@ -53,8 +53,8 @@ public class MovieService {
             movies.getStreamings().clear();
             movies.getStreamings().addAll(streamings);
 
-            repository.save(movie);
-            return Optional.of(movie);
+            repository.save(movies);
+            return Optional.of(movies);
         }
         return Optional.empty();
     }
