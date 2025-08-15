@@ -54,8 +54,17 @@ public class MovieService {
             movies.getStreamings().addAll(streamings);
 
             repository.save(movie);
+            return Optional.of(movie);
         }
         return Optional.empty();
+    }
+
+    public List<Movie> findByCategories (Long categoryId){
+        return repository.findByCategories(List.of(Category.builder().id(categoryId).build()));
+    }
+
+    public void delete(Long id){
+        repository.deleteById(id);
     }
 
     // modern method
