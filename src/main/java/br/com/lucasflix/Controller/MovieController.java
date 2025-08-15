@@ -37,11 +37,33 @@ public class MovieController {
        return ResponseEntity.ok(responses);
     }
 
-    @GetMapping
+    @GetMapping ("/{id}")
     public ResponseEntity<MovieResponse> findById(@PathVariable Long id){
         return service.findById(id)
                 .map(movie ->ResponseEntity.ok(MovieMapper.toMovieResponse(movie)))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping ("/{id}")
+    public ResponseEntity<MovieResponse> uptade(@PathVariable Long id, @RequestBody MovieRequest request){
+        return service.update(id, MovieMapper.toMovie(request))
+                .map(movie -> ResponseEntity.ok(MovieMapper.toMovieResponse(movie)))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping ("/search")
+    public ResponseEntity<List<MovieResponse>> findByCateogroies (@RequestParam Long category){
+        return ResponseEntity.ok(service.findByCategories(category)
+                .stream()
+                .map(movie -> MovieMapper.toMovieResponse(movie))
+                .toList());
+
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+
     }
 
 }
