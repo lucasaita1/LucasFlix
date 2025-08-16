@@ -11,4 +11,6 @@ import java.util.List;
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
     List<Movie> findByCategories (List<Category> categories);
+
+    List<Movie> findTop5ByOrderByRatingDesc();
 }
