@@ -67,6 +67,10 @@ public class MovieService {
         repository.deleteById(id);
     }
 
+    public List<Movie> top5BestMovies(){
+        return repository.findTop5ByOrderByRatingDesc();
+    }
+
     // modern method
     private List<Category> findCategories(List<Category> categories){
         List<Category> categoriesFound = new ArrayList<>();
