@@ -66,4 +66,13 @@ public class MovieController {
 
     }
 
+    @GetMapping ("/best")
+    public ResponseEntity<List<MovieResponse>> top5BestMovies() {
+        List<Movie> movies = service.top5BestMovies();
+        List<MovieResponse> responses = movies.stream()
+                .map(movie -> MovieMapper.toMovieResponse(movie))
+                .toList();
+        return ResponseEntity.ok(responses);
+    }
+
 }
