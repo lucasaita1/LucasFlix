@@ -8,7 +8,8 @@ import br.com.lucasflix.entity.User;
 public class UserMapper {
 
     public static User toUser (UserRequest request) {
-        return User.builder()
+        return User
+                .builder()
                 .name(request.name())
                 .email(request.email())
                 .password(request.password())
@@ -17,7 +18,9 @@ public class UserMapper {
 
 
         public static UserResponse toUserResponse (User user) {
-            return UserResponse.builder()
+            return UserResponse
+                    .builder()
+                    .id(user.getId())
                     .name(user.getName())
                     .email(user.getEmail())
                     .build();
