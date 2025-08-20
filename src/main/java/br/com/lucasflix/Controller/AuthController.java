@@ -35,6 +35,7 @@ public class AuthController {
                 .body(UserMapper.toUserResponse(user));
     }
 
+    //Rota para gerar Token
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest){
         UsernamePasswordAuthenticationToken userAndPass = new UsernamePasswordAuthenticationToken(loginRequest.email(), loginRequest.password());
