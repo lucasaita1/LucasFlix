@@ -5,6 +5,7 @@ import br.com.lucasflix.Controller.Response.CategoryResponse;
 import br.com.lucasflix.Mapper.CategoryMapper;
 import br.com.lucasflix.Service.CategoryService;
 import br.com.lucasflix.entity.Category;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,7 @@ public class CategoryController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<CategoryResponse> createCategory(@RequestBody CategoryRequest categoryRequest) {
+    public ResponseEntity<CategoryResponse> createCategory(@Valid @RequestBody CategoryRequest categoryRequest) {
         Category category = CategoryMapper.toCategory(categoryRequest);
         Category savedCategory = categoryService.newCategory(category);
         return ResponseEntity.status(HttpStatus.CREATED)

@@ -1,4 +1,6 @@
 package br.com.lucasflix.Controller.Request;
 
-public record CategoryRequest(String name) {
+import jakarta.validation.constraints.NotBlank;
+
+public record CategoryRequest(@NotBlank(message = "Category cannot be empty") String name) {
 }
