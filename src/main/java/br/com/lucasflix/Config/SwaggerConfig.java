@@ -12,7 +12,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI getOpenAPIO() {
         Contact contact = new Contact()
-                .name("Lucas")
+                .name("Lucas Aita")
                 .email("lucasaita4000@gmail.com");
 
         Info info = new Info()
