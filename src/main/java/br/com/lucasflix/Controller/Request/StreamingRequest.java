@@ -1,4 +1,6 @@
 package br.com.lucasflix.Controller.Request;
 
-public record StreamingRequest(String name) {
+import jakarta.validation.constraints.NotBlank;
+
+public record StreamingRequest(@NotBlank(message = "Streaming cannot be empty") String name) {
 }

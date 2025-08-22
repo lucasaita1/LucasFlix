@@ -6,6 +6,7 @@ import br.com.lucasflix.Controller.Response.StreamingResponse;
 import br.com.lucasflix.Mapper.StreamigMapper;
 import br.com.lucasflix.Service.StreamingService;
 import br.com.lucasflix.entity.Streaming;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class StreamingController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<StreamingResponse> createNewStreaming(@RequestBody StreamingRequest request){
+    public ResponseEntity<StreamingResponse> createNewStreaming(@Valid @RequestBody StreamingRequest request){
         Streaming streaming = StreamigMapper.toStreaming(request);
         Streaming createdStreaming = service.newStreaming(streaming);
         return ResponseEntity.status(HttpStatus.CREATED)
