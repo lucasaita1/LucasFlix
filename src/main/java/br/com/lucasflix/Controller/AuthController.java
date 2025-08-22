@@ -8,6 +8,10 @@ import br.com.lucasflix.Exception.UsernameAndPasswordInvalid;
 import br.com.lucasflix.Mapper.UserMapper;
 import br.com.lucasflix.Service.UserService;
 import br.com.lucasflix.entity.User;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +27,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("lucasflix/auth")
 @RequiredArgsConstructor
+@Tag(name = "Autenticação", description = "Endpoints de autenticação e registro de usuários")
 public class AuthController {
 
     private final UserService service;
     private final AuthenticationManager authenticationManager;
     private final TokenComponent tokenComponent;
 
+    @Operation(summary = "Registrar novo usuário", description = "Cria um novo usuário no sistema")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Dados inválidos")
+    })
     @PostMapping("/register")
     public ResponseEntity<UserResponse> createUser(@RequestBody UserRequest request){
         User user = UserMapper.toUser(request);
@@ -37,6 +47,11 @@ public class AuthController {
                 .body(UserMapper.toUserResponse(user));
     }
 
+    @Operation(summary = "Login de usuário", description = "Autentica o usuário e retorna um token JWT")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Login bem-sucedido"),
+            @ApiResponse(responseCode = "401", description = "Usuário ou senha inválidos")
+    })
     //Rota para gerar Token
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest){
