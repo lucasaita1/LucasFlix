@@ -144,25 +144,18 @@ http://localhost:8080/swagger/index.html
 src/
 ├── main/
 │   ├── java/com/lucas/lucasflix/
-│   │   ├── config/           # Configurações
-│   │   ├── controller/       # Controllers REST
-│   │   ├── dto/             # Data Transfer Objects
+│   │   ├── config/          # Configurações
+│   │   ├── controller/      # Controllers REST
+│   │   ├── mapper/          # mapeamento dos Data Transfer Objects
 │   │   ├── entity/          # Entidades JPA
 │   │   ├── exception/       # Tratamento de exceções
 │   │   ├── repository/      # Repositórios JPA
-│   │   ├── security/        # Configurações de segurança
 │   │   ├── service/         # Lógica de negócio
 │   │   └── LucasFlixApplication.java
 │   └── resources/
 │       ├── application.properties
-│       ├── application-dev.properties
-│       ├── application-prod.properties
-│       └── data.sql
 └── test/
     └── java/com/lucas/lucasflix/
-        ├── controller/      # Testes dos controllers
-        ├── service/         # Testes dos services
-        └── integration/     # Testes de integração
 ```
 
 ---
