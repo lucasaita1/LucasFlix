@@ -35,6 +35,7 @@
 
 LucasFlix é uma aplicação **RESTful API** desenvolvida em **Java com Spring Boot**, que simula uma plataforma de gerenciamento de filmes e serviços de streaming.  
 O projeto foi criado para consolidar conhecimentos em **APIs REST, autenticação JWT, documentação com Swagger e boas práticas de arquitetura**.
+
  ---
 
 ### ✨ Diferenciais
