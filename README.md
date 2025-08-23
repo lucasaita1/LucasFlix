@@ -247,10 +247,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 ## 📞 Contato
 
-**Lucas Aita**
-- GitHub: [@lucasaita1](https://github.com/lucasaita1)
-- LinkedIn: [Lucas Aita](https://linkedin.com/in/lucasaita)
-- Email: lucasaita4000@gmail.com
+> Desenvolvido por **Lucas Prates Aita**  
+> [GitHub](https://github.com/lucasaita1) • [LinkedIn](https://www.linkedin.com/in/lucas-aita/) • [Instagram](https://www.instagram.com/lucasp.aita/)
 
 ---
 
