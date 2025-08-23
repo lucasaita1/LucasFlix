@@ -47,9 +47,6 @@ O projeto foi criado para consolidar conhecimentos em **APIs REST, autenticaçã
 
 🚀 Arquitetura escalável seguindo princípios SOLID
 
-🧪 Testes automatizados para garantir qualidade
-
-🔄 Integração contínua pronta para deploy
 
 ---
 
